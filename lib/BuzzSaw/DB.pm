@@ -2,13 +2,13 @@ package BuzzSaw::DB; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: DB.pm.in 22184 2012-11-26 14:13:27Z squinney@INF.ED.AC.UK $
+# $Id: DB.pm.in 22945 2013-03-29 10:38:33Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22184 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/DB.pm.in $
-# $Date: 2012-11-26 14:13:27 +0000 (Mon, 26 Nov 2012) $
+# $Revision: 22945 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/DB.pm.in $
+# $Date: 2013-03-29 10:38:33 +0000 (Fri, 29 Mar 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use English qw(-no_match_vars);
 use BuzzSaw::DB::Schema;
@@ -287,11 +287,11 @@ BuzzSaw::DB - The BuzzSaw database interface
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::DB version 0.10.3
+This documentation refers to BuzzSaw::DB version 0.10.4
 
 =head1 SYNOPSIS
 
-   use BuzzSaw::DB::Schema;
+   use BuzzSaw::DB;
 
    my $db = BuzzSaw::DB->new( name => "logdb",
                               user => "fred",

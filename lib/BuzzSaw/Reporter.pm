@@ -5,10 +5,10 @@ use warnings;
 # $Id: Reporter.pm.in 21690 2012-08-23 07:47:01Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 21690 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Reporter.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Reporter.pm.in $
 # $Date: 2012-08-23 08:47:01 +0100 (Thu, 23 Aug 2012) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use BuzzSaw::DateTime ();
 use BuzzSaw::ReportLog ();

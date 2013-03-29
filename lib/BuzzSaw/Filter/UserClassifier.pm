@@ -2,13 +2,13 @@ package BuzzSaw::Filter::UserClassifier; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: UserClassifier.pm.in 22897 2013-03-14 15:17:49Z squinney@INF.ED.AC.UK $
+# $Id: UserClassifier.pm.in 22947 2013-03-29 11:28:39Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22897 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Filter/UserClassifier.pm.in $
-# $Date: 2013-03-14 15:17:49 +0000 (Thu, 14 Mar 2013) $
+# $Revision: 22947 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Filter/UserClassifier.pm.in $
+# $Date: 2013-03-29 11:28:39 +0000 (Fri, 29 Mar 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use BuzzSaw::UserClassifier ();
 
@@ -38,7 +38,7 @@ sub check {
   my ( $self, $event, $votes ) = @_;
 
   if ( !$votes ) {
-    return 0;
+    return $BuzzSaw::Report::VOTE_NO_INTEREST;
   }
 
   my @tags;
@@ -50,7 +50,7 @@ sub check {
     push @tags, $tag;
   }
 
-  return ( -1, @tags );
+  return ( $BuzzSaw::Report::VOTE_NEUTRAL, @tags );
 }
 
 1;
@@ -62,7 +62,7 @@ BuzzSaw::Filter::UserClassifier - A BuzzSaw event filter for classifying users
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Filter::UserClassifier version 0.10.3
+This documentation refers to BuzzSaw::Filter::UserClassifier version 0.10.4
 
 =head1 SYNOPSIS
 

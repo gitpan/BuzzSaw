@@ -5,10 +5,10 @@ use warnings;
 # $Id: AuthFailure.pm.in 22184 2012-11-26 14:13:27Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22184 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Report/AuthFailure.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Report/AuthFailure.pm.in $
 # $Date: 2012-11-26 14:13:27 +0000 (Mon, 26 Nov 2012) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use Moose;
 

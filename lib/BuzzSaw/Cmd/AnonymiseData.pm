@@ -5,10 +5,10 @@ use warnings;
 # $Id: AnonymiseData.pm.in 22461 2013-02-01 11:30:50Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22461 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Cmd/AnonymiseData.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Cmd/AnonymiseData.pm.in $
 # $Date: 2013-02-01 11:30:50 +0000 (Fri, 01 Feb 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use BuzzSaw::DB;
 
@@ -177,7 +177,7 @@ BuzzSaw::Cmd::AnonymiseData - BuzzSaw data anonymiser
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Cmd::AnonymiseData version 0.10.3
+This documentation refers to BuzzSaw::Cmd::AnonymiseData version 0.10.4
 
 =head1 SYNOPSIS
 

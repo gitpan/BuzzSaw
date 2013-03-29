@@ -5,10 +5,10 @@ use warnings;
 # $Id: Types.pm.in 22454 2013-02-01 11:17:28Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22454 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Types.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Types.pm.in $
 # $Date: 2013-02-01 11:17:28 +0000 (Fri, 01 Feb 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use UNIVERSAL::require;
 

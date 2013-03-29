@@ -5,10 +5,10 @@ use warnings;
 # $Id: Kernel.pm.in 22903 2013-03-15 14:09:39Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22903 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Report/Kernel.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Report/Kernel.pm.in $
 # $Date: 2013-03-15 14:09:39 +0000 (Fri, 15 Mar 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use Moose;
 
@@ -64,7 +64,7 @@ BuzzSaw::Report::Kernel - Generate BuzzSaw reports about kernel events
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Report::Kernel version 0.10.3
+This documentation refers to BuzzSaw::Report::Kernel version 0.10.4
 
 =head1 SYNOPSIS
 

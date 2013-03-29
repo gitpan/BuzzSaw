@@ -10,7 +10,7 @@ BuzzSaw::DB::Schema::Result::Tag - BuzzSaw DBIx::Class resultset
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::DB::Schema::Result::Tag version 0.10.3
+This documentation refers to BuzzSaw::DB::Schema::Result::Tag version 0.10.4
 
 =head1 DESCRIPTION
 

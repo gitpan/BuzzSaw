@@ -5,10 +5,10 @@ use warnings;
 # $Id: DateTime.pm.in 21586 2012-08-14 10:37:59Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 21586 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/DateTime.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/DateTime.pm.in $
 # $Date: 2012-08-14 11:37:59 +0100 (Tue, 14 Aug 2012) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use base 'DateTime';
 
@@ -79,7 +79,7 @@ BuzzSaw::DateTime - A class which provides additional functionality to DateTime
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Filter version 0.10.3
+This documentation refers to BuzzSaw::Filter version 0.10.4
 
 =head1 SYNOPSIS
 

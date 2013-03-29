@@ -2,13 +2,13 @@ package BuzzSaw::Filter::SSH; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: SSH.pm.in 22896 2013-03-14 15:16:40Z squinney@INF.ED.AC.UK $
+# $Id: SSH.pm.in 22947 2013-03-29 11:28:39Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22896 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Filter/SSH.pm.in $
-# $Date: 2013-03-14 15:16:40 +0000 (Thu, 14 Mar 2013) $
+# $Revision: 22947 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Filter/SSH.pm.in $
+# $Date: 2013-03-29 11:28:39 +0000 (Fri, 29 Mar 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use Readonly;
 
@@ -35,7 +35,7 @@ sub check {
   my ( $self, $event ) = @_;
 
   my @tags;
-  my $accept = 0;
+  my $accept = $BuzzSaw::Report::VOTE_NO_INTEREST;
   if ( exists $event->{program} && $event->{program} eq 'sshd' ) {
     push @tags, ( 'ssh', 'auth' );
 
@@ -44,14 +44,14 @@ sub check {
       $event->{extra_info}{source_address} = $+{address};
       $event->{extra_info}{auth_method}    = $+{method};
 
-      $accept = 1;
+      $accept = $BuzzSaw::Report::VOTE_KEEP;
       push @tags, 'auth_success';
     } elsif ( $event->{message} =~ $re_failed ) {
       $event->{userid} = $+{user};
       $event->{extra_info}{source_address} = $+{address};
       $event->{extra_info}{auth_method}    = $+{method};
 
-      $accept = 1;
+      $accept = $BuzzSaw::Report::VOTE_KEEP;
       push @tags, 'auth_failure';
     }
 
@@ -69,7 +69,7 @@ BuzzSaw::Filter::SSH - A BuzzSaw event filter for SSH log entries
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Filter::SSH version 0.10.3
+This documentation refers to BuzzSaw::Filter::SSH version 0.10.4
 
 =head1 SYNOPSIS
 

@@ -1,11 +1,11 @@
 Name:           BuzzSaw
 Summary:        Tools for parsing and filtering log files
-Version:        0.10.3
+Version:        0.10.4
 Release:        1
 Packager:       Stephen Quinney <squinney@inf.ed.ac.uk>
 License:        GPLv2
 Group:          LCFG/Utilities
-Source:         BuzzSaw-0.10.3.tar.gz
+Source:         BuzzSaw-0.10.4.tar.gz
 BuildArch:	noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -74,8 +74,37 @@ cp nonpersonal.txt $RPM_BUILD_ROOT/usr/share/buzzsaw/data
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Thu Mar 28 2013 SVN: new release
-- Release: 0.10.3
+* Fri Mar 29 2013 SVN: new release
+- Release: 0.10.4
+
+* Fri Mar 29 2013 11:29 squinney@INF.ED.AC.UK
+- docs/filters.html: list the named constants for the filter voting
+  system
+
+* Fri Mar 29 2013 11:28 squinney@INF.ED.AC.UK
+- lib/BuzzSaw/Filter.pm.in, lib/BuzzSaw/Filter/Cosign.pm.in,
+  lib/BuzzSaw/Filter/Kernel.pm.in, lib/BuzzSaw/Filter/SSH.pm.in,
+  lib/BuzzSaw/Filter/Sleep.pm.in,
+  lib/BuzzSaw/Filter/UserClassifier.pm.in,
+  lib/BuzzSaw/Importer.pm.in: Reworked the voting system so that it
+  uses named constants. This improves the clarity of the decision
+  making
+
+* Fri Mar 29 2013 10:58 squinney@INF.ED.AC.UK
+- lib/BuzzSaw/Report.pm.in: Added bulk precedence heder in the
+  email sending code to avoid vacation auto-responses
+
+* Fri Mar 29 2013 10:38 squinney@INF.ED.AC.UK
+- docs/database.html, lib/BuzzSaw/DB.pm.in: more database docs
+
+* Fri Mar 29 2013 10:03 squinney@INF.ED.AC.UK
+- docs/database.html: Added basic details of the database schema
+
+* Thu Mar 28 2013 18:11 squinney@INF.ED.AC.UK
+- docs/design.html: fixed closing tag
+
+* Thu Mar 28 2013 17:00 squinney@INF.ED.AC.UK
+- ChangeLog, lcfg.yml: BuzzSaw release: 0.10.3
 
 * Thu Mar 28 2013 16:59 squinney@INF.ED.AC.UK
 - MANIFEST: Updated list of files in manifest

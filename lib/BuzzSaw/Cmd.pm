@@ -5,10 +5,10 @@ use warnings;
 # $Id: Cmd.pm.in 21390 2012-07-18 08:42:25Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 21390 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Cmd.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Cmd.pm.in $
 # $Date: 2012-07-18 09:42:25 +0100 (Wed, 18 Jul 2012) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use Log::Log4perl qw(:easy);
 
@@ -89,7 +89,7 @@ BuzzSaw::Cmd - Super-class for BuzzSaw command line applications
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Cmd version 0.10.3
+This documentation refers to BuzzSaw::Cmd version 0.10.4
 
 =head1 SYNOPSIS
 

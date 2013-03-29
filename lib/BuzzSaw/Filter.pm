@@ -2,13 +2,19 @@ package BuzzSaw::Filter; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: Filter.pm.in 22894 2013-03-14 15:15:04Z squinney@INF.ED.AC.UK $
+# $Id: Filter.pm.in 22947 2013-03-29 11:28:39Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22894 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Filter.pm.in $
-# $Date: 2013-03-14 15:15:04 +0000 (Thu, 14 Mar 2013) $
+# $Revision: 22947 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Filter.pm.in $
+# $Date: 2013-03-29 11:28:39 +0000 (Fri, 29 Mar 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
+
+use Readonly;
+
+Readonly our $VOTE_KEEP        => 1;
+Readonly our $VOTE_NO_INTEREST => 0;
+Readonly our $VOTE_NEUTRAL     => -1;
 
 use Moose::Role;
 
@@ -38,7 +44,7 @@ BuzzSaw::Filter - A Moose role which defines the BuzzSaw filter interface
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Filter version 0.10.3
+This documentation refers to BuzzSaw::Filter version 0.10.4
 
 =head1 SYNOPSIS
 

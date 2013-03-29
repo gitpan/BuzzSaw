@@ -2,13 +2,13 @@ package BuzzSaw::Report;
 use strict;
 use warnings;
 
-# $Id: Report.pm.in 22903 2013-03-15 14:09:39Z squinney@INF.ED.AC.UK $
+# $Id: Report.pm.in 22946 2013-03-29 10:58:52Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22903 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Report.pm.in $
-# $Date: 2013-03-15 14:09:39 +0000 (Fri, 15 Mar 2013) $
+# $Revision: 22946 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Report.pm.in $
+# $Date: 2013-03-29 10:58:52 +0000 (Fri, 29 Mar 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use BuzzSaw::DB;
 use BuzzSaw::DateTime;
@@ -170,6 +170,13 @@ sub send_email {
     Data     => $text,
   );
 
+  # This is a slightly hacky attempt to avoid getting messages from
+  # vacation auto-responders. The field name needs that trailing colon
+  # as it is not in the list of "standard" headers supported by
+  # MIME::Lite.
+
+  push @args, ( 'Precedence:' => 'bulk' );
+
   if ( scalar @cc > 0 ) {
     my $cc = join q{, }, @cc;
     push @args, ( Cc => $cc );
@@ -266,7 +273,7 @@ BuzzSaw::Report - A Moose class which is used for generating BuzzSaw reports
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Report version 0.10.3
+This documentation refers to BuzzSaw::Report version 0.10.4
 
 =head1 SYNOPSIS
 

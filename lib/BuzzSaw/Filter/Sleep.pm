@@ -2,13 +2,13 @@ package BuzzSaw::Filter::Sleep; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: Sleep.pm.in 22896 2013-03-14 15:16:40Z squinney@INF.ED.AC.UK $
+# $Id: Sleep.pm.in 22947 2013-03-29 11:28:39Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22896 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_3/lib/BuzzSaw/Filter/Sleep.pm.in $
-# $Date: 2013-03-14 15:16:40 +0000 (Thu, 14 Mar 2013) $
+# $Revision: 22947 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Filter/Sleep.pm.in $
+# $Date: 2013-03-29 11:28:39 +0000 (Fri, 29 Mar 2013) $
 
-our $VERSION = '0.10.3';
+our $VERSION = '0.10.4';
 
 use Readonly;
 
@@ -23,15 +23,15 @@ sub check {
   my ( $self, $event ) = @_;
 
   my @tags;
-  my $accept = 0;
+  my $accept = $BuzzSaw::Report::VOTE_NO_INTEREST;
   if ( exists $event->{program} && $event->{program} eq 'lcfg-sleep' ) {
     push @tags, 'sleep';
 
     if ( $event->{message} eq 'Waking up' ) {
-      $accept = 1;
+      $accept = $BuzzSaw::Report::VOTE_KEEP;
       push @tags, 'acpi_wake';
     } elsif ( $event->{message} eq 'Going to sleep' ) {
-      $accept = 1;
+      $accept = $BuzzSaw::Report::VOTE_KEEP;
       push @tags, 'acpi_sleep';
     }
 
@@ -49,7 +49,7 @@ BuzzSaw::Filter::Sleep - A BuzzSaw event filter for sleep log entries
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Filter::Sleep version 0.10.3
+This documentation refers to BuzzSaw::Filter::Sleep version 0.10.4
 
 =head1 SYNOPSIS
 
