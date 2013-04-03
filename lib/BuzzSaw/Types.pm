@@ -2,18 +2,18 @@ package BuzzSaw::Types; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: Types.pm.in 22454 2013-02-01 11:17:28Z squinney@INF.ED.AC.UK $
+# $Id: Types.pm.in 22999 2013-04-03 19:38:25Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22454 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Types.pm.in $
-# $Date: 2013-02-01 11:17:28 +0000 (Fri, 01 Feb 2013) $
+# $Revision: 22999 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/Types.pm.in $
+# $Date: 2013-04-03 20:38:25 +0100 (Wed, 03 Apr 2013) $
 
-our $VERSION = '0.10.4';
+our $VERSION = '0.11.0';
 
 use UNIVERSAL::require;
 
 use MooseX::Types -declare => [qw(BuzzSawDB BuzzSawParser
-                                  BuzzSawDateTime
+                                  BuzzSawDateTime BuzzSawTimeZone
                                   BuzzSawDataSource BuzzSawDataSourceList
                                   BuzzSawDataSourceFilesNamesList
                                   BuzzSawFilter BuzzSawFilterList
@@ -128,6 +128,17 @@ coerce BuzzSawDateTime,
       require BuzzSaw::DateTime;
       BuzzSaw::DateTime->new( time_zone => 'local', %{$_} );
     };
+
+class_type BuzzSawTimeZone, { class => 'DateTime::TimeZone' };
+
+coerce BuzzSawTimeZone,
+    from Str,
+    via {
+	require DateTime::TimeZone;
+	DateTime::TimeZone->new( name => $_ );
+    };
+
+# DataSource
 
 subtype BuzzSawDataSourceFilesNamesList,
   as ArrayRef[Str|RegexpRef];

@@ -2,17 +2,17 @@ package BuzzSaw::Report;
 use strict;
 use warnings;
 
-# $Id: Report.pm.in 22946 2013-03-29 10:58:52Z squinney@INF.ED.AC.UK $
+# $Id: Report.pm.in 22999 2013-04-03 19:38:25Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22946 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Report.pm.in $
-# $Date: 2013-03-29 10:58:52 +0000 (Fri, 29 Mar 2013) $
+# $Revision: 22999 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/Report.pm.in $
+# $Date: 2013-04-03 20:38:25 +0100 (Wed, 03 Apr 2013) $
 
-our $VERSION = '0.10.4';
+our $VERSION = '0.11.0';
 
 use BuzzSaw::DB;
 use BuzzSaw::DateTime;
-use BuzzSaw::Types qw(BuzzSawDB BuzzSawDateTime);
+use BuzzSaw::Types qw(BuzzSawDB BuzzSawDateTime BuzzSawTimeZone);
 
 use MIME::Lite ();
 use Template ();
@@ -113,6 +113,13 @@ has 'order_by' => (
     isa        => 'ArrayRef|HashRef',
     required   => 1,
     default    => sub { ['logtime'] },
+);
+
+has 'timezone' => (
+    is      => 'ro',
+    isa     => BuzzSawTimeZone,
+    coerce  => 1,
+    default => sub { 'local' },
 );
 
 has 'tags' => (
@@ -261,6 +268,11 @@ sub find_events {
 
   my @events = $events_rs->search( \%query, \%attrs );
 
+  # Move all the events to the required timezone if it is not UTC
+  if ( $self->timezone ne 'UTC' ) {
+      map { $_->logtime->set_time_zone($self->timezone) } @events;
+  }
+
   return @events;
 }
 
@@ -273,7 +285,7 @@ BuzzSaw::Report - A Moose class which is used for generating BuzzSaw reports
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Report version 0.10.4
+This documentation refers to BuzzSaw::Report version 0.11.0
 
 =head1 SYNOPSIS
 
@@ -389,6 +401,17 @@ include: now, today, recent, yesterday, this-week, this-month,
 this-year, week-ago, seconds from the unix epoch or variously
 formatted date/time strings. See the module documentation for full
 details.
+
+=item timezone
+
+This attribute is used to specify the timezone into which the event
+timestamps (the C<logtime> field) should be converted. The default is
+C<local> which relies on the L<DateTime> module working out what is
+most suitable for your current time zone. All timestamps are stored in
+the database in UTC, if you do not want any conversion then set this
+attribute to C<UTC>. This attribute actually takes a
+L<DateTime::TimeZone> object but a string will be converted
+appropriately.
 
 =item order_by
 

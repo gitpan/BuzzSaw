@@ -5,10 +5,10 @@ use warnings;
 # $Id: Event.pm.in 22451 2013-01-30 20:38:14Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22451 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/DB/Schema/Result/Event.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/DB/Schema/Result/Event.pm.in $
 # $Date: 2013-01-30 20:38:14 +0000 (Wed, 30 Jan 2013) $
 
-our $VERSION = '0.10.4';
+our $VERSION = '0.11.0';
 
 use DateTime;
 
@@ -20,7 +20,7 @@ BuzzSaw::DB::Schema::Result::Event - BuzzSaw DBIx::Class resultset
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::DB::Schema::Result::Event version 0.10.4
+This documentation refers to BuzzSaw::DB::Schema::Result::Event version 0.11.0
 
 =head1 DESCRIPTION
 

@@ -1,6 +1,6 @@
 ---
 name: BuzzSaw
-version: v0.10.4
+version: v0.11.0
 author:
   - 'Stephen Quinney <squinney@inf.ed.ac.uk>'
 abstract: Tools for parsing and filtering log files
@@ -41,72 +41,72 @@ configure_requires:
 provides:
   App::BuzzSaw:
     file: lib/App/BuzzSaw.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Cmd:
     file: lib/BuzzSaw/Cmd.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Cmd::Import:
     file: lib/BuzzSaw/Cmd/Import.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::DB:
     file: lib/BuzzSaw/DB.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::DB::Schema:
     file: lib/BuzzSaw/DB/Schema.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::DB::Schema::Result::CurrentProcessing:
     file: lib/BuzzSaw/DB/Schema/Result/CurrentProcessing.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::DB::Schema::Result::Event:
     file: lib/BuzzSaw/DB/Schema/Result/Event.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::DB::Schema::Result::Log:
     file: lib/BuzzSaw/DB/Schema/Result/Log.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::DB::Schema::Result::Tag:
     file: lib/BuzzSaw/DB/Schema/Result/Tag.pm
   BuzzSaw::DataSource:
     file: lib/BuzzSaw/DataSource.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::DataSource::Files:
     file: lib/BuzzSaw/DataSource/Files.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::DateTime:
     file: lib/BuzzSaw/DateTime.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Filter:
     file: lib/BuzzSaw/Filter.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Filter::Kernel:
     file: lib/BuzzSaw/Filter/Kernel.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Filter::Sleep:
     file: lib/BuzzSaw/Filter/Sleep.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Importer:
     file: lib/BuzzSaw/Importer.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Parser:
     file: lib/BuzzSaw/Parser.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Parser::RFC3339:
     file: lib/BuzzSaw/Parser/RFC3339.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Report:
     file: lib/BuzzSaw/Report.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Report::Kernel:
     file: lib/BuzzSaw/Report/Kernel.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Report::Sleep:
     file: lib/BuzzSaw/Report/Sleep.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Reporter:
     file: lib/BuzzSaw/Reporter.pm
-    version: v0.10.4
+    version: v0.11.0
   BuzzSaw::Types:
     file: lib/BuzzSaw/Types.pm
-    version: v0.10.4
+    version: v0.11.0
 generated_by: Module::Build version 0.35
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html

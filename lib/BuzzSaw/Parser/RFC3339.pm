@@ -5,10 +5,10 @@ use warnings;
 # $Id: RFC3339.pm.in 22935 2013-03-28 12:51:19Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22935 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_10_4/lib/BuzzSaw/Parser/RFC3339.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/Parser/RFC3339.pm.in $
 # $Date: 2013-03-28 12:51:19 +0000 (Thu, 28 Mar 2013) $
 
-our $VERSION = '0.10.4';
+our $VERSION = '0.11.0';
 
 use Readonly;
 
@@ -112,7 +112,7 @@ BuzzSaw::Parser::RFC3339 - BuzzSaw parser for log entries with the RFC3339 dates
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Parser::RFC3339 version 0.10.4
+This documentation refers to BuzzSaw::Parser::RFC3339 version 0.11.0
 
 =head1 SYNOPSIS
 

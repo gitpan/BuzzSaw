@@ -1,11 +1,11 @@
 Name:           BuzzSaw
 Summary:        Tools for parsing and filtering log files
-Version:        0.10.4
+Version:        0.11.0
 Release:        1
 Packager:       Stephen Quinney <squinney@inf.ed.ac.uk>
 License:        GPLv2
 Group:          LCFG/Utilities
-Source:         BuzzSaw-0.10.4.tar.gz
+Source:         BuzzSaw-0.11.0.tar.gz
 BuildArch:	noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -74,8 +74,16 @@ cp nonpersonal.txt $RPM_BUILD_ROOT/usr/share/buzzsaw/data
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Fri Mar 29 2013 SVN: new release
-- Release: 0.10.4
+* Wed Apr 03 2013 SVN: new release
+- Release: 0.11.0
+
+* Wed Apr 03 2013 19:38 squinney@INF.ED.AC.UK
+- lib/BuzzSaw/Report.pm.in, lib/BuzzSaw/Types.pm.in: Added support
+  in reports for moving the event timestamps from UTC into another
+  timezone
+
+* Fri Mar 29 2013 11:30 squinney@INF.ED.AC.UK
+- ChangeLog, lcfg.yml: BuzzSaw release: 0.10.4
 
 * Fri Mar 29 2013 11:29 squinney@INF.ED.AC.UK
 - docs/filters.html: list the named constants for the filter voting
