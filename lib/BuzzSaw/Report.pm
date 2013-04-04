@@ -5,10 +5,10 @@ use warnings;
 # $Id: Report.pm.in 22999 2013-04-03 19:38:25Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22999 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/Report.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Report.pm.in $
 # $Date: 2013-04-03 20:38:25 +0100 (Wed, 03 Apr 2013) $
 
-our $VERSION = '0.11.0';
+our $VERSION = '0.11.2';
 
 use BuzzSaw::DB;
 use BuzzSaw::DateTime;
@@ -285,7 +285,7 @@ BuzzSaw::Report - A Moose class which is used for generating BuzzSaw reports
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Report version 0.11.0
+This documentation refers to BuzzSaw::Report version 0.11.2
 
 =head1 SYNOPSIS
 

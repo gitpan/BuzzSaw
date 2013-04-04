@@ -5,10 +5,10 @@ use warnings;
 # $Id: Log.pm.in 21338 2012-07-11 11:17:23Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 21338 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/DB/Schema/Result/Log.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/DB/Schema/Result/Log.pm.in $
 # $Date: 2012-07-11 12:17:23 +0100 (Wed, 11 Jul 2012) $
 
-our $VERSION = '0.11.0';
+our $VERSION = '0.11.2';
 
 use base 'DBIx::Class::Core';
 
@@ -18,7 +18,7 @@ BuzzSaw::DB::Schema::Result::Log - BuzzSaw DBIx::Class resultset
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::DB::Schema::Result::Log version 0.11.0
+This documentation refers to BuzzSaw::DB::Schema::Result::Log version 0.11.2
 
 =head1 DESCRIPTION
 

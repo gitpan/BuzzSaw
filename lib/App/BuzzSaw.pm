@@ -5,10 +5,10 @@ use warnings;
 # $Id: BuzzSaw.pm.in 21368 2012-07-17 11:18:36Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 21368 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/App/BuzzSaw.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/App/BuzzSaw.pm.in $
 # $Date: 2012-07-17 12:18:36 +0100 (Tue, 17 Jul 2012) $
 
-our $VERSION = '0.11.0';
+our $VERSION = '0.11.2';
 
 use Moose;
 
@@ -29,7 +29,7 @@ App::BuzzSaw - The BuzzSaw command-line application.
 
 =head1 VERSION
 
-This documentation refers to App::BuzzSaw version 0.11.0
+This documentation refers to App::BuzzSaw version 0.11.2
 
 =head1 SYNOPSIS
 

@@ -2,13 +2,13 @@ package BuzzSaw::Importer; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: Importer.pm.in 22947 2013-03-29 11:28:39Z squinney@INF.ED.AC.UK $
+# $Id: Importer.pm.in 23002 2013-04-04 06:36:41Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22947 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/Importer.pm.in $
-# $Date: 2013-03-29 11:28:39 +0000 (Fri, 29 Mar 2013) $
+# $Revision: 23002 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Importer.pm.in $
+# $Date: 2013-04-04 07:36:41 +0100 (Thu, 04 Apr 2013) $
 
-our $VERSION = '0.11.0';
+our $VERSION = '0.11.2';
 
 use BuzzSaw::DB;
 use BuzzSaw::Types qw(BuzzSawDB BuzzSawFilterList BuzzSawDataSourceList);
@@ -138,13 +138,13 @@ sub import_events {
 
           push @results, [ $filter->name => $accept ];
 
-          if ( $accept == $BuzzSaw::Report::VOTE_KEEP ) {
+          if ( $accept == $BuzzSaw::Filter::VOTE_KEEP ) {
             $votes += 1;
 
             for my $tag (@tags) {
               $all_tags{$tag} = 1;
             }
-          } elsif ( $accept == $BuzzSaw::Report::VOTE_NEUTRAL ) {
+          } elsif ( $accept == $BuzzSaw::Filter::VOTE_NEUTRAL ) {
 
             for my $tag (@tags) {
               $all_tags{$tag} = 1;
@@ -191,7 +191,7 @@ BuzzSaw::Importer - Imports log entries of interest from data sources
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Importer version 0.11.0
+This documentation refers to BuzzSaw::Importer version 0.11.2
 
 =head1 SYNOPSIS
 

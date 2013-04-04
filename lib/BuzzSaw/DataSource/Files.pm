@@ -5,10 +5,10 @@ use warnings;
 # $Id: Files.pm.in 22433 2013-01-25 12:02:00Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22433 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/DataSource/Files.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/DataSource/Files.pm.in $
 # $Date: 2013-01-25 12:02:00 +0000 (Fri, 25 Jan 2013) $
 
-our $VERSION = '0.11.0';
+our $VERSION = '0.11.2';
 
 use BuzzSaw::Types qw(BuzzSawDataSourceFilesNamesList);
 
@@ -380,7 +380,7 @@ BuzzSaw::DataSource::Files - A BuzzSaw data source for a set of files.
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::DataSource::Files version 0.11.0
+This documentation refers to BuzzSaw::DataSource::Files version 0.11.2
 
 =head1 SYNOPSIS
 

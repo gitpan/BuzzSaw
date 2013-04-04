@@ -8,7 +8,7 @@ use warnings;
 # $HeadURL: https://svn.lcfg.org/svn/source/trunk/PkgForge/bin/pkgforge.in $
 # $Date: 2011-01-07 10:59:03 +0000 (Fri, 07 Jan 2011) $
 
-our $VERSION = '0.11.0';
+our $VERSION = '0.11.2';
 
 use App::BuzzSaw;
 
@@ -22,7 +22,7 @@ buzzsaw - The BuzzSaw log file processing suite.
 
 =head1 VERSION
 
-This documentation refers to buzzsaw version 0.11.0
+This documentation refers to buzzsaw version 0.11.2
 
 =head1 USAGE
 

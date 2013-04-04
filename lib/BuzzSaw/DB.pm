@@ -5,10 +5,10 @@ use warnings;
 # $Id: DB.pm.in 22945 2013-03-29 10:38:33Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22945 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_0/lib/BuzzSaw/DB.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/DB.pm.in $
 # $Date: 2013-03-29 10:38:33 +0000 (Fri, 29 Mar 2013) $
 
-our $VERSION = '0.11.0';
+our $VERSION = '0.11.2';
 
 use English qw(-no_match_vars);
 use BuzzSaw::DB::Schema;
@@ -287,7 +287,7 @@ BuzzSaw::DB - The BuzzSaw database interface
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::DB version 0.11.0
+This documentation refers to BuzzSaw::DB version 0.11.2
 
 =head1 SYNOPSIS
 

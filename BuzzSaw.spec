@@ -1,11 +1,11 @@
 Name:           BuzzSaw
 Summary:        Tools for parsing and filtering log files
-Version:        0.11.0
+Version:        0.11.2
 Release:        1
 Packager:       Stephen Quinney <squinney@inf.ed.ac.uk>
 License:        GPLv2
 Group:          LCFG/Utilities
-Source:         BuzzSaw-0.11.0.tar.gz
+Source:         BuzzSaw-0.11.2.tar.gz
 BuildArch:	noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -74,8 +74,22 @@ cp nonpersonal.txt $RPM_BUILD_ROOT/usr/share/buzzsaw/data
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Wed Apr 03 2013 SVN: new release
-- Release: 0.11.0
+* Thu Apr 04 2013 SVN: new release
+- Release: 0.11.2
+
+* Thu Apr 04 2013 06:42 squinney@INF.ED.AC.UK
+- lib/BuzzSaw/Filter/Cosign.pm.in, lib/BuzzSaw/Filter/Kernel.pm.in,
+  lib/BuzzSaw/Filter/SSH.pm.in, lib/BuzzSaw/Filter/Sleep.pm.in,
+  lib/BuzzSaw/Filter/UserClassifier.pm.in: More variable name fixes
+
+* Thu Apr 04 2013 06:39 squinney@INF.ED.AC.UK
+- ChangeLog, lcfg.yml: BuzzSaw release: 0.11.1
+
+* Thu Apr 04 2013 06:36 squinney@INF.ED.AC.UK
+- lib/BuzzSaw/Importer.pm.in: Fixed variable name
+
+* Wed Apr 03 2013 19:40 squinney@INF.ED.AC.UK
+- ChangeLog, lcfg.yml: BuzzSaw release: 0.11.0
 
 * Wed Apr 03 2013 19:38 squinney@INF.ED.AC.UK
 - lib/BuzzSaw/Report.pm.in, lib/BuzzSaw/Types.pm.in: Added support
