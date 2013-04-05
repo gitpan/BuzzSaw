@@ -2,17 +2,21 @@ package BuzzSaw::Report::Kernel; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: Kernel.pm.in 22903 2013-03-15 14:09:39Z squinney@INF.ED.AC.UK $
+# $Id: Kernel.pm.in 23030 2013-04-05 12:33:25Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22903 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Report/Kernel.pm.in $
-# $Date: 2013-03-15 14:09:39 +0000 (Fri, 15 Mar 2013) $
+# $Revision: 23030 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/Report/Kernel.pm.in $
+# $Date: 2013-04-05 13:33:25 +0100 (Fri, 05 Apr 2013) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use Moose;
 
 extends 'BuzzSaw::Report';
+
+has '+tags' => (
+    default => sub { [ 'segfault', 'oom', 'oops', 'panic' ] },
+);
 
 override 'process_events' => sub {
   my ( $self, @events ) = @_;
@@ -64,7 +68,7 @@ BuzzSaw::Report::Kernel - Generate BuzzSaw reports about kernel events
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Report::Kernel version 0.11.2
+This documentation refers to BuzzSaw::Report::Kernel version 0.12.0
 
 =head1 SYNOPSIS
 

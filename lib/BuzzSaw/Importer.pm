@@ -5,10 +5,10 @@ use warnings;
 # $Id: Importer.pm.in 23002 2013-04-04 06:36:41Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 23002 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Importer.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/Importer.pm.in $
 # $Date: 2013-04-04 07:36:41 +0100 (Thu, 04 Apr 2013) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use BuzzSaw::DB;
 use BuzzSaw::Types qw(BuzzSawDB BuzzSawFilterList BuzzSawDataSourceList);
@@ -191,7 +191,7 @@ BuzzSaw::Importer - Imports log entries of interest from data sources
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Importer version 0.11.2
+This documentation refers to BuzzSaw::Importer version 0.12.0
 
 =head1 SYNOPSIS
 

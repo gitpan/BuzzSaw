@@ -1,11 +1,11 @@
 Name:           BuzzSaw
 Summary:        Tools for parsing and filtering log files
-Version:        0.11.2
+Version:        0.12.0
 Release:        1
 Packager:       Stephen Quinney <squinney@inf.ed.ac.uk>
 License:        GPLv2
 Group:          LCFG/Utilities
-Source:         BuzzSaw-0.11.2.tar.gz
+Source:         BuzzSaw-0.12.0.tar.gz
 BuildArch:	noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -74,8 +74,35 @@ cp nonpersonal.txt $RPM_BUILD_ROOT/usr/share/buzzsaw/data
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Thu Apr 04 2013 SVN: new release
-- Release: 0.11.2
+* Fri Apr 05 2013 SVN: new release
+- Release: 0.12.0
+
+* Fri Apr 05 2013 12:36 squinney@INF.ED.AC.UK
+- buzzsaw.sql: throw more indexes at the event table in a bid to
+  make reports quicker
+
+* Fri Apr 05 2013 12:33 squinney@INF.ED.AC.UK
+- lcfg.yml, lib/BuzzSaw/Report.pm.in,
+  lib/BuzzSaw/Report/Kernel.pm.in, lib/BuzzSaw/Report/Sleep.pm.in:
+  Added support for restricting report queries by the value of the
+  program field. This helps speed things up when the query might
+  return a lot of results. Also altered the default for the tags
+  list. This is now empty by default which makes a bit more sense
+  in most cases where the program field is set to the name of the
+  report. Reports should define the list of tags they want
+
+* Thu Apr 04 2013 16:08 squinney@INF.ED.AC.UK
+- ChangeLog, lcfg.yml: BuzzSaw release: 0.11.3
+
+* Thu Apr 04 2013 16:08 squinney@INF.ED.AC.UK
+- lcfg.yml, lib/BuzzSaw/DB/Schema/Result/Event.pm.in,
+  lib/BuzzSaw/Report.pm.in, templates/reports/sleep.tt: Completely
+  reworked how we get the localtime for an event. This will
+  hopefully be a lot faster and has the added bonus of providing a
+  more generally useful method
+
+* Thu Apr 04 2013 06:42 squinney@INF.ED.AC.UK
+- ChangeLog, lcfg.yml: BuzzSaw release: 0.11.2
 
 * Thu Apr 04 2013 06:42 squinney@INF.ED.AC.UK
 - lib/BuzzSaw/Filter/Cosign.pm.in, lib/BuzzSaw/Filter/Kernel.pm.in,

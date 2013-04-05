@@ -5,10 +5,10 @@ use warnings;
 # $Id: Sleep.pm.in 23005 2013-04-04 06:42:45Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 23005 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Filter/Sleep.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/Filter/Sleep.pm.in $
 # $Date: 2013-04-04 07:42:45 +0100 (Thu, 04 Apr 2013) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use Readonly;
 
@@ -49,7 +49,7 @@ BuzzSaw::Filter::Sleep - A BuzzSaw event filter for sleep log entries
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Filter::Sleep version 0.11.2
+This documentation refers to BuzzSaw::Filter::Sleep version 0.12.0
 
 =head1 SYNOPSIS
 

@@ -5,10 +5,10 @@ use warnings;
 # $Id: Cosign.pm.in 23005 2013-04-04 06:42:45Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 23005 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Filter/Cosign.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/Filter/Cosign.pm.in $
 # $Date: 2013-04-04 07:42:45 +0100 (Thu, 04 Apr 2013) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use Readonly;
 
@@ -54,7 +54,7 @@ BuzzSaw::Filter::Cosign - A BuzzSaw event filter for Cosign log entries
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Filter::Cosign version 0.11.2
+This documentation refers to BuzzSaw::Filter::Cosign version 0.12.0
 
 =head1 SYNOPSIS
 

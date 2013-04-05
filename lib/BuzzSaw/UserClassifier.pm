@@ -5,10 +5,10 @@ use warnings;
 # $Id: UserClassifier.pm.in 22899 2013-03-14 16:16:45Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22899 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/UserClassifier.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/UserClassifier.pm.in $
 # $Date: 2013-03-14 16:16:45 +0000 (Thu, 14 Mar 2013) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use IO::File ();
 
@@ -198,7 +198,7 @@ BuzzSaw::UserClassifier - Classifies the type of a username
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::UserClassifier version 0.11.2
+This documentation refers to BuzzSaw::UserClassifier version 0.12.0
 
 =head1 SYNOPSIS
 

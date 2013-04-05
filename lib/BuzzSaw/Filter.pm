@@ -5,10 +5,10 @@ use warnings;
 # $Id: Filter.pm.in 22947 2013-03-29 11:28:39Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 22947 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Filter.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/Filter.pm.in $
 # $Date: 2013-03-29 11:28:39 +0000 (Fri, 29 Mar 2013) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use Readonly;
 
@@ -44,7 +44,7 @@ BuzzSaw::Filter - A Moose role which defines the BuzzSaw filter interface
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Filter version 0.11.2
+This documentation refers to BuzzSaw::Filter version 0.12.0
 
 =head1 SYNOPSIS
 

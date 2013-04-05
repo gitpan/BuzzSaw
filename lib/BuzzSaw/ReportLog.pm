@@ -5,10 +5,10 @@ use warnings;
 # $Id: ReportLog.pm.in 21695 2012-08-23 15:07:50Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 21695 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/ReportLog.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/ReportLog.pm.in $
 # $Date: 2012-08-23 16:07:50 +0100 (Thu, 23 Aug 2012) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use File::Spec ();
 use File::Temp ();
@@ -213,7 +213,7 @@ BuzzSaw::ReportLog - Tracks when BuzzSaw reports were last run.
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::ReportLog version 0.11.2
+This documentation refers to BuzzSaw::ReportLog version 0.12.0
 
 =head1 SYNOPSIS
 

@@ -2,13 +2,13 @@ package BuzzSaw::Report;
 use strict;
 use warnings;
 
-# $Id: Report.pm.in 22999 2013-04-03 19:38:25Z squinney@INF.ED.AC.UK $
+# $Id: Report.pm.in 23030 2013-04-05 12:33:25Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22999 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Report.pm.in $
-# $Date: 2013-04-03 20:38:25 +0100 (Wed, 03 Apr 2013) $
+# $Revision: 23030 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/Report.pm.in $
+# $Date: 2013-04-05 13:33:25 +0100 (Fri, 05 Apr 2013) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use BuzzSaw::DB;
 use BuzzSaw::DateTime;
@@ -122,13 +122,19 @@ has 'timezone' => (
     default => sub { 'local' },
 );
 
+has 'program' => (
+    is      => 'ro',
+    isa     => Str,
+    default => sub { my $self = shift;
+                     return lc($self->name); },
+);
+
 has 'tags' => (
   traits    => ['Array'],
   is        => 'ro',
   isa       => ArrayRef[Str],
   lazy      => 1,
-  default   => sub { my $self = shift;
-                     return [lc($self->name)]; },
+  default   => sub { [] },
   handles   => {
     has_tags  => 'count',
     tags_list => 'elements',
@@ -255,23 +261,44 @@ sub find_events {
     ],
   );
 
-  my %attrs = ( order_by => $self->order_by );
+  # Add an extra computed column named "localtime" which holds the
+  # localised version of the logtime. I tried applying the timezone
+  # shift to the DateTime objects after creation but it was woefully
+  # slow.
+
+  # It is reasonably safe to embed the timezone name into some raw SQL
+  # here since we have validated the timezone using the
+  # BuzzSawTimeZone type.
+
+  my $localtime = q{me.logtime at time zone '} . $self->timezone->name . q{' AS localtime};
+
+  my %attrs = (
+      '+select' => [ \$localtime ],
+      '+as'     => [ 'localtime' ],
+      join      => 'tags',
+      order_by  => $self->order_by,
+  );
+
+  if ( $self->program =~ m/\S/ ) {
+    $query{program} = $self->program;
+  }
 
   if ( $self->has_tags ) {
 
     # join onto the tag table and search for events with the specified tags
 
-    $attrs{join} = 'tags';
-
     $query{'tags.name'} = { -in => $self->tags };
+  } else {
+
+      # prefetching does not entirely make sense when tags have been
+      # specified. Need to think about how to rework the query so that
+      # it is possible to limit the returned list of events to a set
+      # of tags but then prefetch the complete set for each event.
+
+      $attrs{prefetch} = 'tags';
   }
 
   my @events = $events_rs->search( \%query, \%attrs );
-
-  # Move all the events to the required timezone if it is not UTC
-  if ( $self->timezone ne 'UTC' ) {
-      map { $_->logtime->set_time_zone($self->timezone) } @events;
-  }
 
   return @events;
 }
@@ -285,7 +312,7 @@ BuzzSaw::Report - A Moose class which is used for generating BuzzSaw reports
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Report version 0.11.2
+This documentation refers to BuzzSaw::Report version 0.12.0
 
 =head1 SYNOPSIS
 
@@ -429,15 +456,20 @@ array or a reference to a hash. For example:
 
          order_by => { -asc => 'col' }
 
+=item program
+
+This is the name of the program field you wish to match in the log
+messages. By default the value is the lower-cased version of the name
+attribute for the report module instance (e.g. for
+C<BuzzSaw::Report::Kernel> it is C<kernel>. If you wish to match all
+log messages then set this to the empty string C<''>.
 
 =item tags
 
 This list attribute is used to specify which tags to search for in the
 database when finding events of interest. If no tags are specified
 then the search will return all events found within the specified
-date/time range. By default the tag list contains the lower-cased
-version of the name attribute for the report module instance (e.g. for
-C<BuzzSaw::Report::Kernel> it is C<kernel>.
+date/time range. The default is an empty list.
 
 =back
 

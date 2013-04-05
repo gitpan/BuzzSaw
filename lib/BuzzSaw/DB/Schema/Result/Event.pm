@@ -2,15 +2,16 @@ package BuzzSaw::DB::Schema::Result::Event; # -*-perl-*-
 use strict;
 use warnings;
 
-# $Id: Event.pm.in 22451 2013-01-30 20:38:14Z squinney@INF.ED.AC.UK $
+# $Id: Event.pm.in 23014 2013-04-04 16:08:20Z squinney@INF.ED.AC.UK $
 # $Source:$
-# $Revision: 22451 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/DB/Schema/Result/Event.pm.in $
-# $Date: 2013-01-30 20:38:14 +0000 (Wed, 30 Jan 2013) $
+# $Revision: 23014 $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/DB/Schema/Result/Event.pm.in $
+# $Date: 2013-04-04 17:08:20 +0100 (Thu, 04 Apr 2013) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use DateTime;
+use Try::Tiny;
 
 use base 'DBIx::Class::Core';
 
@@ -20,7 +21,7 @@ BuzzSaw::DB::Schema::Result::Event - BuzzSaw DBIx::Class resultset
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::DB::Schema::Result::Event version 0.11.2
+This documentation refers to BuzzSaw::DB::Schema::Result::Event version 0.12.0
 
 =head1 DESCRIPTION
 
@@ -212,6 +213,33 @@ __PACKAGE__->has_many(
   'BuzzSaw::DB::Schema::Result::ExtraInfo',
   { 'foreign.event' => 'self.id' },
 );
+
+sub localtime {
+    my ($self) = @_;
+
+    # This might just count as hack of the week!
+
+    use feature 'state';
+    require DateTime::TimeZone;
+    state $localtz = DateTime::TimeZone->new( name => 'local' );
+
+    # When a specially computed localtime column exists we get the
+    # value and inflate to a datetime object. When it does not exist
+    # we copy the logtime object and shift to the local timezone. The
+    # second option is much slower for large numbers of rows but
+    # should always work.
+
+    my $dt = try { 
+        my $timestamp = $self->get_column('localtime');
+        my $dtf = $self->result_source->storage->datetime_parser();
+        $dtf->parse_datetime($timestamp);
+    } catch {
+        my $clone = $self->logtime->clone();
+        $clone->set_time_zone($localtz);
+    };
+
+    return $dt;
+}
 
 1;
 __END__

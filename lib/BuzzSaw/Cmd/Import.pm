@@ -5,10 +5,10 @@ use warnings;
 # $Id: Import.pm.in 21368 2012-07-17 11:18:36Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 21368 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Cmd/Import.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/Cmd/Import.pm.in $
 # $Date: 2012-07-17 12:18:36 +0100 (Tue, 17 Jul 2012) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use BuzzSaw::Importer;
 
@@ -63,7 +63,7 @@ BuzzSaw::Cmd::Import - BuzzSaw log entry importer application
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Cmd::Import version 0.11.2
+This documentation refers to BuzzSaw::Cmd::Import version 0.12.0
 
 =head1 SYNOPSIS
 

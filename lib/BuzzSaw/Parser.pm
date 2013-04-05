@@ -5,10 +5,10 @@ use warnings;
 # $Id: Parser.pm.in 21360 2012-07-16 13:46:29Z squinney@INF.ED.AC.UK $
 # $Source:$
 # $Revision: 21360 $
-# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_11_2/lib/BuzzSaw/Parser.pm.in $
+# $HeadURL: https://svn.lcfg.org/svn/source/tags/BuzzSaw/BuzzSaw_0_12_0/lib/BuzzSaw/Parser.pm.in $
 # $Date: 2012-07-16 14:46:29 +0100 (Mon, 16 Jul 2012) $
 
-our $VERSION = '0.11.2';
+our $VERSION = '0.12.0';
 
 use Moose::Role;
 
@@ -25,7 +25,7 @@ BuzzSaw::Parser - A Moose role which defines the BuzzSaw parser interface
 
 =head1 VERSION
 
-This documentation refers to BuzzSaw::Parser version 0.11.2
+This documentation refers to BuzzSaw::Parser version 0.12.0
 
 =head1 SYNOPSIS
 
